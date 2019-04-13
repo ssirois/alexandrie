@@ -1,0 +1,22 @@
+{
+  "name": "alexandrie",
+  "version": "1.0.0",
+  "description": "A workflow to handle the administration and archiving of photos took at an event",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssirois/alexandrie.git"
+  },
+  "author": "Samuel D. Sirois",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ssirois/alexandrie/issues"
+  },
+  "homepage": "https://github.com/ssirois/alexandrie#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
