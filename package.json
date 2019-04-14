@@ -6,7 +6,7 @@
   "scripts": {
     "app": "electron .",
     "build:back": "parcel build --target electron main.ts",
-    "build:front": "parcel build index.html",
+    "build:front": "parcel build --public-url ./ index.html",
     "build": "npm run build:front && npm run build:back",
     "lint": "tslint src/index.tsx",
     "serve": "parcel index.html",
