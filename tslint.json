@@ -8,7 +8,8 @@
     "max-line-length": [true, 150],
     "member-ordering": [false],
     "interface-name": [false],
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "arrow-parens": true
   },
   "rules": {
     "quotemark": [true, "single"],
@@ -16,7 +17,8 @@
     "max-line-length": [true, 150],
     "member-ordering": [false],
     "interface-name": [false],
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "arrow-parens": true
   },
   "rulesDirectory": []
 }
