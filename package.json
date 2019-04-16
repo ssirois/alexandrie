@@ -12,8 +12,7 @@
     "serve": "parcel index.html",
     "test": "jest",
     "test:watch": "jest --watch",
-    "watch:back": "parcel watch --target electron main.ts",
-    "watch:front": "parcel watch --no-hmr --public-url ./ index.html"
+    "dev": "node ./dev.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +37,7 @@
     "spectron": "^5.0.0",
     "ts-jest": "^24.0.2",
     "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.4.3"
   },
   "dependencies": {
