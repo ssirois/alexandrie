@@ -1,5 +1,5 @@
 import { ipcRenderer } from 'electron';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export const useFolderList = () => {
   const [folders, setFolders] = useState<string[]>([]);

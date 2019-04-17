@@ -1,18 +1,12 @@
+import { AppBar, createStyles, CssBaseline, Toolbar, Typography } from '@material-ui/core';
 import * as React from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  CssBaseline,
-  createStyles
-} from '@material-ui/core';
-import { FolderList } from './FolderList';
 import { useFolderList } from '../hooks/useFolderList';
+import { FolderList } from './FolderList';
 
 export const styles = createStyles({
   root: {
-    paddingTop: '64px'
-  }
+    paddingTop: '64px',
+  },
 });
 
 export const App = () => {

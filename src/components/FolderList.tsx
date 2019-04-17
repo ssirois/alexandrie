@@ -4,9 +4,7 @@ interface FolderListProps {
   folders: string[];
 }
 
-export const FolderList: React.FunctionComponent<FolderListProps> = ({
-  folders
-}) => {
+export const FolderList: React.FunctionComponent<FolderListProps> = ({ folders }) => {
   return (
     <ul>
       {folders.map((folder, index) => (
