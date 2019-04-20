@@ -1,9 +1,19 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended"
-    ],
-    "jsRules": {},
-    "rules": {},
-    "rulesDirectory": []
+  "defaultSeverity": "error",
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "jsRules": {
+    "no-unused-expression": true,
+    "member-ordering": [false],
+    "interface-name": [false],
+    "object-literal-sort-keys": false,
+    "arrow-parens": true
+  },
+  "rules": {
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
+    "member-ordering": [false],
+    "interface-name": [false],
+    "object-literal-sort-keys": false,
+    "arrow-parens": true
+  },
+  "rulesDirectory": []
 }
