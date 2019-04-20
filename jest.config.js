@@ -7,11 +7,11 @@ module.exports = {
     {
       ...common,
       testEnvironment: 'node',
-      testMatch: ['**/src/index.test.ts'],
+      testMatch: ['**/src/**/*.test.ts'],
     },
     {
       ...common,
-      testEnvironment: '@jest-runner/electron/environment',
+      testEnvironment: 'node',
       testMatch: ['**/src/**/*.test.tsx'],
     },
   ],

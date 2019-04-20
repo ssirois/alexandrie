@@ -1,6 +1,7 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
 import { enableLiveReload } from 'electron-compile';
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
+import { ArchiveHardDrive } from './ArchiveHardDrive';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -63,5 +64,8 @@ app.on('activate', () => {
 // code. You can also put them in separate files and import them here.
 
 ipcMain.on('folder-list-request', (event: any) => {
-  event.sender.send('folder-list-answer', ['this is the list of folder']);
+  const archiveHardDrive = new ArchiveHardDrive('folderWithOneItem');
+  const folders = archiveHardDrive.getFolders();
+
+  event.sender.send('folder-list-answer', folders);
 });

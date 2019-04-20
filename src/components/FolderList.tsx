@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 interface FolderListProps {
-  folders: string[];
+  folders?: string[];
 }
 
-export const FolderList: React.FunctionComponent<FolderListProps> = ({ folders }) => {
+export const FolderList: React.FunctionComponent<FolderListProps> = ({ folders = [] }) => {
   return (
-    <ul>
+    <ul data-testid="folder-list">
       {folders.map((folder, index) => (
         <li key={index}>{folder}</li>
       ))}
