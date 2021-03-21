@@ -1,0 +1,25 @@
+#!/bin/bash
+CQFD=$(PATH="/usr/bin:/usr/local/bin" command -v cqfd)
+[ -z "$CQFD_EXTRA_RUN_ARGS" ] && CQFD_EXTRA_RUN_ARGS=""
+
+if [[ "$1" == "init" ]]; then
+  set -e
+  ${CQFD} init
+  ${CQFD} run npm install
+
+  exit $?
+fi
+
+X11_PASSTHROUGH="-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=${DISPLAY}"
+LIBGL_OPTIONS="-e LIBGL_ALWAYS_SOFTWARE=1 -e LIBGL_DEBUG=verbose"
+CQFD_EXTRA_RUN_ARGS="${CQFD_EXTRA_RUN_ARGS} ${X11_PASSTHROUGH} ${LIBGL_OPTIONS}"
+
+if [[ "$2" == "dev" || "$2" == "debug" ]]; then
+  DEBUG_PORT="-p 0.0.0.0:9229:9229"
+  CQFD_EXTRA_RUN_ARGS="${CQFD_EXTRA_RUN_ARGS} ${DEBUG_PORT}"
+fi
+
+CQFD_CALL_STRING="CQFD_EXTRA_RUN_ARGS=\"${CQFD_EXTRA_RUN_ARGS}\" ${CQFD} $*"
+
+bash -c "${CQFD_CALL_STRING}"
+

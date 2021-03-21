@@ -1,0 +1,40 @@
+; This configuration file is intended to be used by the tool CQFD if it is installed on
+; the development environment. Basically, the tools execute a 'command' in a docker container built from
+; a Dockerfile located at: .cqfd/docker/Dockerfile
+;
+; For more information, see: https://github.com/savoirfairelinux/cqfd
+
+
+[project]
+org='bidouilleur'
+name='alexandrie'
+
+[debug]
+command='npm run debug'
+
+[dev]
+command='./scripts/launch-dev-environment'
+
+[pack]
+command='npx nodegui-packer --pack ./dist'
+
+[start]
+command='npm run start'
+
+[watch]
+command='npm run dev'
+
+; [build] section must be last section
+[build]
+command='npm run build'
+user_extra_groups=''
+files=
+archive=
+
+flavors='
+        debug \
+        dev \
+        pack \
+        start \
+        watch \
+        '

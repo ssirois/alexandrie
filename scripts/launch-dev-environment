@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#cd "$( dirname "${BASH_SOURCE[0]}" )"/..
+
+# the session we have access to and in which we wish to start screen is in a "sudo" context
+# and it is not possible to start a screen session in that context. Here is a hack.
+# for details, see:
+# https://serverfault.com/questions/116775/sudo-as-different-user-and-running-screen/116830
+function launch_in_gnu_screen() {
+  /usr/bin/script -q -c "screen -c scripts/screen.config" /dev/null
+}
+
+launch_in_gnu_screen
